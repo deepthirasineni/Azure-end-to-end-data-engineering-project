@@ -1,0 +1,9 @@
+{
+	"name": "adf-dxr-demo",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e69fd8c4-37ca-4023-86dd-a33fe9050485",
+		"tenantId": "61bf2169-9a06-4f06-bc02-881d1b0ca04f"
+	}
+}

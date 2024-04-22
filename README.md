@@ -3,19 +3,25 @@
 2. Key Insights
 3.  Project Architecture
 
-* **3.1. Data Ingestion**
-* **3.2. Data Transformation**
-* **3.3. Data Loading**
+* 3.1. Data Ingestion
+* 3.2. Data Transformation
+* 3.3. Data Loading
 
-**🔬 Project Overview**
+### 🔬 Project Overview
+
 This is an end-to-end data engineering project on the Azure cloud. Where I did data ingestion from an on-premise SQL Server to Azure SQL Server and Azure Data Lake using Data Factory to transformation using Databricks and Spark, and loading to Synapse. Also, I used Azure Active Directory (AAD) and Azure Key Vault for data monitoring and governance purposes.
 
-**💾 Dataset**
+#### 💾 Dataset
 
-AdventureWorks is a database provided by Microsoft for free on online platforms. It is a product sample database originally published by Microsoft to demonstrate the supposed design of a SQL server database using SQL Server 2008. Here are some key points to know about AdventureWorks:
+The AdventureWorks dataset focuses on a fictional bicycle manufacturer named Adventure Works Cycles. It includes various data types related to the business, such as:
 
-AdventureWorks database supports a manufacturing MNC named Adventure Works Cycles.
-It is a sample Online Transaction Processing (OLTP) database, which is a type of data processing where multiple transactions occur concurrently. These are shipped by Microsoft with all of their SQL server products.
+* **Sales:** Customer information, orders, products, pricing, and transactions.
+* **Purchasing:** Vendor information, purchase orders, and receiving information.
+* **Manufacturing:** Bill of materials, production information, and work orders.
+* **Human Resources:** Employee information, job titles, salaries, and benefits.
+* **Product Information:** Product descriptions, specifications, photos, pricing, and categories.
+
+Tables are linked together using foreign keys, allowing you to explore relationships between different entities in the data.
 For this project, I used the Lightweight (LT) data: a lightweight and pared-down version of the OLTP sample. 
 
 **🎯 Project Goals**
@@ -28,6 +34,7 @@ Utilize Azure Synapse Analytics for loading clean data.
 Implement Azure Active Directory (AAD) and Azure Key Vault for monitoring and governance.
 
 **🕵️ Key Insights**
+
 . 💸 Total Revenue by Product Category
 
 Touring Bikes is the top 1 category generating revenue with 32% followed by Road Bikes with 26% and Mountain Bikes with 24%.
@@ -44,16 +51,17 @@ N°2: The United States of America (USA) is second with total sales of 264 and $
 This can be explained by males having more interest in doing outdoor activities with the different categories of Bikes than females.
 
 
-**📝 Project Architecture**
+### 📝 Project Architecture
+
 You can find the detailed information on the diagram below:
 ![adventure works](https://github.com/deepthirasineni/adventureworks/assets/62241395/6a013f9a-ee02-48f4-a412-9ab5017aee0d)
 
 
 
 
-**📤 Data Ingestion**
+#### 📤 Data Ingestion
 
-Connected the on-premise SQL Server with Azure using Microsoft Integration Runtime.
+Connected the Azure SQL Server with Azure using Microsoft Integration Runtime.
 
 
 Setup the Resource group with needed services (Key Vault, Storage Account, Data Factory, Databricks, Synapse Analytics)
@@ -65,7 +73,8 @@ Migrated the tables from the Azure SQL Server to Azure Data Lake Storage Gen2.
 
 
 
-**⚙️ Data Transformation**
+#### ⚙️ Data Transformation
+
 Mounted Azure Blob Storage to Databricks to retrieve raw data from the Data Lake.
 Used Spark Cluster in Azure Databricks to clean and refine the raw data.
 Saved the cleaned data in a Delta format; optimized for further analysis.
@@ -73,7 +82,8 @@ Saved the cleaned data in a Delta format; optimized for further analysis.
 <img width="1503" alt="datalake" src="https://github.com/deepthirasineni/adventureworks/assets/62241395/83330ef4-6e87-40c4-898b-e57211247a09">
 
 
-**📥 Data Loading**
+#### 📥 Data Loading
+
 Used Azure Synapse Analytics to load the refined data efficiently.
 Created SQL database and connected it to the data lake.
 ![synapse-workspace](https://github.com/deepthirasineni/adventureworks/assets/62241395/1b9af0b2-e904-4df0-8cab-b595c16e6139)
